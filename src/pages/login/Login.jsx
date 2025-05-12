@@ -13,7 +13,7 @@ export const Login = () => {
         if(loggedUser != null) {
             navigate("/home")
         }
-    }, [])
+    }, []) //verifica se esta logado
 
     return(
         <div className={style.page}>
