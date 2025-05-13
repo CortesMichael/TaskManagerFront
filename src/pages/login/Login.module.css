@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body{
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 80px;
+    color: #FFF;
+    background-color: #7800F4;
+    width: 90%;
+    height: 60px;
+    align-items: center;
+}
+
+.page{
+    border: solid #5E00C2;
+    border-radius: 5%;
+    width: 600px;
+    height: 700px;
+}
+
+.BoxLogin img{
+    position: relative;
+    width: 350px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+}
+
+.BoxLogin p{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    color: #5E00C2;
+    font-size: 25px;
+}
+
+.BoxEmail{
+    color: #5E00C2;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+.BoxEmail label{
+    font-size: 20px;
+    display: block;
+}
+
+.BoxEmail input{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    border: solid 2px #5E00C2;
+    border-radius: 10px;
+    width: 90%;
+    height: 60px;
+}
+
+.BoxPassword{
+    color: #5E00C2;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.BoxPassword label{
+    font-size: 20px;
+    display: block;
+}
+
+.BoxPassword input{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    border: solid 2px #5E00C2;
+    border-radius: 10px;
+    width: 90%;
+    height: 60px;
+}

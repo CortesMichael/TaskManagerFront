@@ -16,10 +16,21 @@ export const Login = () => {
     }, []) //verifica se esta logado
 
     return(
-        <div className={style.page}>
-            <h1>
-                funcionou
-            </h1>
+        //chama o module.css
+        <div className={style.page}> 
+            <div className={style.BoxLogin}>
+                <img src="/logoTaskManager.png" alt="Logo TaskManager" />
+                <p>Login</p>
+            </div>
+            <div className={style.BoxEmail}>
+                <label>E-mail:</label>
+                <input type="text" placeholder="nome@email.com"/>
+            </div>
+            <div className={style.BoxPassword}>
+                <label>Senha:</label>
+                <input type="password" placeholder="Senha"/>
+            </div>
+            <button type="submit">Confirmar</button>
         </div>
     );
 }
