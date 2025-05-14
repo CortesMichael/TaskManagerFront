@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body{
+    background-color: #FFF;
+    justify-content: center;
+}
+
+button{
+    cursor: pointer;
+    font-size: 23px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 120px;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #7800F4;
+    width: 500px;
+    height: 70px;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+button:hover{
+    border: 2px solid #5E00C2;
+    border-color: solid 2px #5E00C2;
+    color: #7800F4;
+    background-color: white;
+}
+
+.pageFormRegister{
+    font-family: "Josefin Sans", sans-serif;
+    align-items: center;
+    border: solid #5E00C2;
+    border-radius: 15px;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.BoxLogin img{
+    position: relative;
+    width: 300px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.BoxLogin p{
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: #5E00C2;
+    font-size: 25px;
+}
+
+label{
+    margin-bottom: 5px;
+    margin: 0 auto;
+    font-size: 20px;
+    display: block;
+    color: #5E00C2;
+}
+
+.BoxEmailR{
+    width: 500px;
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+}
+
+.BoxPasswordR{
+    width: 500px;
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.BoxNameR{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+    background-color: white;
+    border: solid 2px #5E00C2;
+    width: 500px;
+    height: 70px;
+    border-radius: 8px;  
+    padding-left: 10px; 
+    font-size: 15px;
+    box-sizing: border-box;
+    color: black;
+    outline: none;
+}
+
+p{
+    color: #5E00C2;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+a{
+    position: relative;
+    display: inline-block;
+    color: black;
+    transition: 0.3s;
+}
+
+a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    background-color: rgb(41, 40, 40);
+    transition: width 0.3s ease;
+    bottom: 0px;
+    left: 0;
+    height: 1px;
+}
+
+a:hover{
+    color:black;
+}
+
+a:hover::after{
+    color: rgb(41, 40, 40);
+    width: 100%;
+}
