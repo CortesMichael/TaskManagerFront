@@ -1,54 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 body{
-    font-family: "Josefin Sans", sans-serif;
     background-color: #FFF;
-    display: flex;
     justify-content: center;
+
+}
+
+.pageFormLogin{
+    font-family: "Josefin Sans", sans-serif;
     align-items: center;
-}
-
-button{
-    font-size: 23px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 120px;
-    border-radius: 8px;
-    color: #FFF;
-    background-color: #7800F4;
-    width: 500px;
-    height: 70px;
-}
-
-.page{
     border: solid #5E00C2;
     border-radius: 15px;
-    width: 600px;
-    height: 700px;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* .BoxLogin img{
+.BoxLogin img{
     position: relative;
-    width: 350px;
+    width: 300px;
     height: auto;
     display: flex;
     margin: 0 auto;
-} */
+    margin-top: 40px;
+}
 
 .BoxLogin p{
     margin: 0 auto;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     color: #5E00C2;
     font-size: 25px;
-}
-
-label{
-    margin-bottom: 5px;
-    margin: 0 auto;
-    font-size: 20px;
-    display: block;
-    color: #5E00C2;
 }
 
 .BoxEmail{
@@ -56,7 +41,7 @@ label{
     height: 70px;
     display: block;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .BoxPassword{
@@ -65,27 +50,4 @@ label{
     display: block;
     margin: 0 auto;
     margin-top: 50px;
-}
-
-input[type="text"],
-input[type="password"]{
-    background-color: white;
-    border: solid 2px #5E00C2;
-    width: 500px;
-    height: 70px;
-    border-radius: 8px;  
-    padding-left: 10px; 
-    font-size: 15px;
-    box-sizing: border-box;
-    color: black;
-}
-
-p{
-    color: #5E00C2;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-span{
-    color: black;
 }
