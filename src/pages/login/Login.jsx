@@ -24,13 +24,13 @@ export const Login = () => {
                 </div>
                 <div className={style.BoxEmail}>
                     <label>E-mail:</label>
-                    <input type="email" placeholder=""/>
+                    <input type="text" placeholder=""/>
                 </div>
                 <div className={style.BoxPassword}>
                     <label>Senha:</label>
                     <input type="password" placeholder=""/>
                 </div>
-                <button type="submit">Confirmar</button>
+                <button className={style.buttonL} type="submit">Confirmar</button>
                 <div className={style.MiniLetters}>
                     <p>Forgot your password? <a href="https://www.instagram.com/kaua_henriique/">Click Here</a></p>
                     <p>Doesn't have an account? <a href="http://localhost:5173/register">Register</a></p>

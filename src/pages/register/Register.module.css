@@ -5,7 +5,7 @@ body{
     justify-content: center;
 }
 
-button{
+.buttonR{
     cursor: pointer;
     font-size: 23px;
     display: block;
@@ -19,9 +19,9 @@ button{
     transition: background-color 0.5s, border-color 0.5s;
 }
 
-button:hover{
-    border: 2px solid #5E00C2;
-    border-color: solid 2px #5E00C2;
+.buttonR:hover{
+    border: 2px solid #7800F4;
+    border-color: solid 2px #7800F4;
     color: #7800F4;
     background-color: white;
 }
@@ -38,7 +38,7 @@ button:hover{
     justify-content: center;
 }
 
-.BoxLogin img{
+.BoxRegister img{
     position: relative;
     width: 300px;
     height: auto;
@@ -47,9 +47,10 @@ button:hover{
     margin-top: 40px;
 }
 
-.BoxLogin p{
+.BoxRegister p{
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     color: #5E00C2;
@@ -69,6 +70,7 @@ label{
     height: 70px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .BoxPasswordR{
@@ -76,15 +78,13 @@ label{
     height: 70px;
     display: block;
     margin: 0 auto;
-    margin-top: 50px;
 }
 
 .BoxNameR{
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
-input[type="email"],
 input[type="password"],
 input[type="text"]{
     background-color: white;
@@ -96,7 +96,7 @@ input[type="text"]{
     font-size: 15px;
     box-sizing: border-box;
     color: black;
-    outline: none;
+    outline: none;  
 }
 
 p{
