@@ -6,6 +6,27 @@ body{
 
 }
 
+.buttonL{
+    cursor: pointer;
+    font-size: 23px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 120px;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #7800F4;
+    width: 500px;
+    height: 70px;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.buttonL:hover{
+    border: 2px solid #7800F4;
+    border-color: solid 2px #7800F4;
+    color: #7800F4;
+    background-color: white;
+}
+
 .pageFormLogin{
     font-family: "Josefin Sans", sans-serif;
     align-items: center;

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom"
 import { BlankLayout } from "../layouts/BlankLayout"
 import { Login } from "../pages/login/Login"
 import { Register } from "../pages/register/Register"
+import { NavBar } from "../components/navbar"
 
 export const Router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: "/register",
-                element: <Register />
+                element: <NavBar />
             }
         ]
     }
