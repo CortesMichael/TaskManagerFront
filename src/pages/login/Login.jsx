@@ -19,7 +19,10 @@ export const Login = () => {
         //chama o module.css
             <div className={style.pageFormLogin}>
                 <div className={style.BoxLogin}>
-                    <img src="/logo.png" alt="Logo TaskManager" />
+                    <div className={style.wrapper}>
+                        <img src="Group.svg" alt="" />
+                        <h1 className={style.title}>TaskManager</h1>
+                    </div>
                     <p>Login</p>
                 </div>
                 <div className={style.BoxEmail}>

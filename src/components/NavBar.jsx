@@ -2,13 +2,14 @@ import style from "./NavBar.module.css"
 
 export const NavBar = () => {
     return(
-        <navbar className={style.navBar}>
+        <header>
             <div className={style.icon}>
-                {/* <img src="./Group.svg" alt="" /> */}
+                <img src="./Group.svg" alt="" />
             </div>
             <div className={style.btns}>
-                <button className={style.btnCreate}></button>
+                <button className={style.btnLogout}>Logout</button>
+                <button className={style.btnCreate}>Create Team</button>
             </div>
-        </navbar>
+        </header>
     );
 }
