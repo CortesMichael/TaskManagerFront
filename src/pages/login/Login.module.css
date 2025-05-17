@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 body{
-    background-color: #FFF;
     justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-image: url(/public/fundo.svg);
+}
 
+.title{
+    color: black;
+    /* position: absolute;
+    margin-left: 330px; */
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    /* margin: 30px 100px 40px -190px;
+    box-sizing: border-box; */
 }
 
 .buttonL{
@@ -18,6 +35,13 @@ body{
     width: 500px;
     height: 70px;
     transition: background-color 0.5s, border-color 0.5s;
+}
+
+.BoxLogin img{
+    width: 80px;
+    height: auto;
+    display: flex;
+    margin-bottom: 10px;
 }
 
 .buttonL:hover{
@@ -37,15 +61,6 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.BoxLogin img{
-    position: relative;
-    width: 300px;
-    height: auto;
-    display: flex;
-    margin: 0 auto;
-    margin-top: 40px;
 }
 
 .BoxLogin p{
