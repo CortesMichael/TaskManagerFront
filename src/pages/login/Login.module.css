@@ -7,7 +7,7 @@ body{
     background-image: url(/public/fundo.svg);
 }
 
-.title{
+.titleL{
     color: black;
     /* position: absolute;
     margin-left: 330px; */
@@ -49,6 +49,10 @@ body{
     border-color: solid 2px #7800F4;
     color: #7800F4;
     background-color: white;
+}
+
+.buttonL:focus{
+    outline: none;
 }
 
 .pageFormLogin{

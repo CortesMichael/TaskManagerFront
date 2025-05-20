@@ -21,7 +21,7 @@ export const Login = () => {
                 <div className={style.BoxLogin}>
                     <div className={style.wrapper}>
                         <img src="Group.svg" alt="" />
-                        <h1 className={style.title}>TaskManager</h1>
+                        <h1 className={style.titleL}>TaskManager</h1>
                     </div>
                     <p>Login</p>
                 </div>
