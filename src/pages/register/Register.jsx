@@ -4,8 +4,12 @@ export const Register = () => {
     return(
         <div className={style.pageRegister}>
             <div className={style.pageFormRegister}>
+                <div className={style.logo}>
+                        <img src="Group.svg" alt="" />
+                        <h1 className={style.titleR}>TaskManager</h1>
+                </div>
                 <div className={style.BoxRegister}>
-                    <img src="/logo.png" alt="Logo TaskManager" />
+                    {/* <img src="/logo.png" alt="Logo TaskManager" /> */}
                     <p>Register</p>
                 </div>
                 <div className={style.BoxNameR}>
