@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import style from "./Login.module.css"
 import { useEffect } from "react";
+import { Modal } from "../../components/ModalCriarEquipe";
+import { useState } from 'react'
 
 export const Login = () => {
 
@@ -14,6 +16,8 @@ export const Login = () => {
             navigate("/home")
         }
     }, []) //verifica se esta logado
+
+    const [openModal, setOpenModal] = useState(false)
 
     return(
         //chama o module.css
@@ -38,6 +42,11 @@ export const Login = () => {
                     <p>Forgot your password? <a href="https://www.instagram.com/kaua_henriique/">Click Here</a></p>
                     <p>Doesn't have an account? <a href="http://localhost:5173/register">Register</a></p>
                 </div>
+                <button onClick={() => setOpenModal(true)}>modal criar equipe</button>
+                <Modal isOpen={openModal} setModalClose={() => setOpenModal(!openModal)}>
+                    {/* children para mexer por dentro do modal */}
+                    <h1>teste</h1>
+                </Modal>
             </div>
     );
 }
