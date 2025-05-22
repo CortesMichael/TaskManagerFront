@@ -14,15 +14,15 @@ export const Register = () => {
                 </div>
                 <div className={style.BoxNameR}>
                     <label>Name:</label>
-                    <input type="text" paceholder=""/>
+                    <input type="text" paceholder="" className={style.inputRName}/>
                 </div>
                 <div className={style.BoxEmailR}>
                     <label>E-mail:</label>
-                    <input type="text" placeholder=""/>
+                    <input type="text" placeholder="" className={style.inputREmail}/>
                 </div>
                 <div className={style.BoxPasswordR}>
                     <label>Senha:</label>
-                    <input type="password" placeholder=""/>
+                    <input type="password" placeholder="" className={style.inputRPassword}/>
                 </div>
                 <button className={style.buttonR} type="submit">Confirmar</button>
                 <div className={style.MiniLetters}>

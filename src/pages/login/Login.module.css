@@ -91,3 +91,29 @@ body{
     margin: 0 auto;
     margin-top: 50px;
 }
+
+.inputLEmail{
+    background-color: white;
+    border: solid 2px #5E00C2;
+    width: 500px;
+    height: 70px;
+    border-radius: 8px;  
+    padding-left: 10px; 
+    font-size: 15px;
+    box-sizing: border-box;
+    color: black;
+    outline: none;  
+}
+
+.inputLPassword{
+    background-color: white;
+    border: solid 2px #5E00C2;
+    width: 500px;
+    height: 70px;
+    border-radius: 8px;  
+    padding-left: 10px; 
+    font-size: 15px;
+    box-sizing: border-box;
+    color: black;
+    outline: none;  
+}

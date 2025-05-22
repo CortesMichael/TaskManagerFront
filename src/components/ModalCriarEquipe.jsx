@@ -9,7 +9,11 @@ export const Modal = ({isOpen, children, setModalClose}) => {
             <div className={style.modalBG}>
                 <div className={style.mainBox}>
                     {children}
-                    <button onClick={setModalClose} className={style.buttonClose}></button>
+                    <div className={style.content}>
+                        <label>Name:</label>
+                        <input type="text" className={style.inputN}/>
+                    </div>
+                    <div className={style.boxClose}><button onClick={setModalClose} className={style.buttonClose}>Close</button></div>
                 </div>
             </div>
         );

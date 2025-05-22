@@ -31,11 +31,11 @@ export const Login = () => {
                 </div>
                 <div className={style.BoxEmail}>
                     <label>E-mail:</label>
-                    <input type="text" placeholder=""/>
+                    <input type="text" placeholder="" className={style.inputLEmail}/>
                 </div>
                 <div className={style.BoxPassword}>
                     <label>Senha:</label>
-                    <input type="password" placeholder=""/>
+                    <input type="password" placeholder="" className={style.inputLPassword}/>
                 </div>
                 <button className={style.buttonL} type="submit">Confirmar</button>
                 <div className={style.MiniLetters}>
@@ -45,7 +45,6 @@ export const Login = () => {
                 <button onClick={() => setOpenModal(true)}>modal criar equipe</button>
                 <Modal isOpen={openModal} setModalClose={() => setOpenModal(!openModal)}>
                     {/* children para mexer por dentro do modal */}
-                    <h1>teste</h1>
                 </Modal>
             </div>
     );
