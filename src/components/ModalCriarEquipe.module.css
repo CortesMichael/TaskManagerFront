@@ -10,6 +10,8 @@
 
 .mainBox{
     position: fixed;
+    bottom: 0;
+    display: block;
     width: 500px;
     height: 500px;
     top: 50%;
@@ -18,5 +20,55 @@
     background-color: white;
     border-radius: 8px;
     color: black; 
+    flex-direction: column;
 }
 
+.boxClose{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonClose{
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #7800F4;
+    width: 100px;
+    height: 40px;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.buttonClose:hover{
+    border: 2px solid #7800F4;
+    border-color: solid 2px #7800F4;
+    color: #7800F4;
+    background-color: white;
+}
+
+.buttonClose:focus{
+    outline: none;
+}
+
+.inputN{
+    background-color: white;
+    border: solid 2px #5E00C2;
+    width: 200px;
+    height: 36px;
+    border-radius: 8px;  
+    padding-left: 10px; 
+    font-size: 15px;
+    box-sizing: border-box;
+    color: black;
+    outline: none;
+    margin: 0 auto;
+}
+
+.content{
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
