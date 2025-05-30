@@ -1,0 +1,151 @@
+/* ModalCriarEquipe.module.css */
+
+.modalBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.mainBox {
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 15px;
+    color: black;
+    border: solid 2px #5E00C2;
+    padding: 20px;
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.boxClose {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.buttonClose {
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #7800F4;
+    width: 150px;
+    height: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid #7800F4;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.buttonClose:hover {
+    color: #7800F4;
+    background-color: white;
+}
+
+.buttonClose:focus {
+    outline: none;
+}
+
+.inputN {
+    background-color: white;
+    border: solid 2px #5E00C2;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;  
+    padding-left: 15px; 
+    font-size: 16px;
+    box-sizing: border-box;
+    color: black;
+    outline: none;
+    margin: 5px 0 15px 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.content {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #5E00C2;
+    font-size: 28px;
+}
+
+.content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+}
+
+.content textarea {
+    padding: 12px;
+    font-family: inherit;
+    min-height: 120px;
+    resize: vertical;
+    border: solid 2px #5E00C2;
+    border-radius: 8px;
+}
+
+.content select {
+    height: 50px;
+    padding: 0 15px;
+    background-color: white;
+    border: solid 2px #5E00C2;
+    border-radius: 8px;
+    font-size: 16px;
+    color: black;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .mainBox {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .buttonClose {
+        width: 120px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .inputN, .content select {
+        height: 45px;
+    }
+}
+
+@media (max-width: 400px) {
+    .boxClose {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .buttonClose {
+        width: 100%;
+    }
+}

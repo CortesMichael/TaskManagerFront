@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import style from "./Login.module.css"
 import { useEffect } from "react";
-import { Modal } from "../../components/ModalCriarEquipe";
+import { ModalCreateTeam } from "../../components/ModalCreateTeam";
+import { ModalCreateProject} from "../../components/ModalCreateProject";
 import { useState } from 'react'
 
 export const Login = () => {
@@ -17,7 +18,16 @@ export const Login = () => {
         }
     }, []) //verifica se esta logado
 
-    const [openModal, setOpenModal] = useState(false)
+    const [modals, setModals] = useState({
+        // inserir função dos modais
+        team: false,
+        project: false,
+    });
+
+    // abre / fecha os modais
+    const toggleModal = (modalName) => {
+        setModals(prev => ({ ...prev, [modalName]: !prev[modalName] }));
+    };
 
     return(
         //chama o module.css
@@ -37,15 +47,17 @@ export const Login = () => {
                     <label>Senha:</label>
                     <input type="password" placeholder="" className={style.inputLPassword}/>
                 </div>
-                <button className={style.buttonL} type="submit">Confirmar</button>
+                <button className={style.buttonL} type="submit">Confirm</button>
                 <div className={style.MiniLetters}>
-                    <p>Forgot your password? <a href="https://www.instagram.com/kaua_henriique/">Click Here</a></p>
-                    <p>Doesn't have an account? <a href="http://localhost:5173/register">Register</a></p>
+                    <p>Forgot your password? <a href="https://www.instagram.com/kaua_henriique/">Reset password</a></p>
+                    <p>Doesn't have an account? <a href="http://localhost:5173/register">Sign in</a></p>
                 </div>
-                <button onClick={() => setOpenModal(true)}>modal criar equipe</button>
-                <Modal isOpen={openModal} setModalClose={() => setOpenModal(!openModal)}>
-                    {/* children para mexer por dentro do modal */}
-                </Modal>
+                <div className="style.modalButtons">
+                    <button onClick={() => toggleModal('team')} className="style.buttonL" >modal criar equipe</button>
+                    <button onClick={() => toggleModal('project')} className="style.buttonL" >modal criar projeto</button>
+                </div>
+                <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')}> {} </ModalCreateTeam>
+                <ModalCreateProject isOpen={modals.project} setModalClose={() => toggleModal('project')}> {} </ModalCreateProject>
             </div>
     );
 }
