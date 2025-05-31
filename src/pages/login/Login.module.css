@@ -1,127 +1,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
-body{
-    justify-content: center;
-    background-position: center;
+/* Container principal */
+.loginContainer {
+    background-image: url("/fundo.svg");
     background-size: cover;
-    background-image: url(/public/fundo.svg);
-}
-
-.titleL{
-    color: black;
-    /* position: absolute;
-    margin-left: 330px; */
-}
-
-.wrapper{
+    background-position: center;
+    animation: backgroundSlide 20s ease infinite;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    /* margin: 30px 100px 40px -190px;
-    box-sizing: border-box; */
-}
-
-.buttonL{
-    cursor: pointer;
-    font-size: 23px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 120px;
-    border-radius: 8px;
-    color: #FFF;
-    background-color: #7800F4;
-    width: 500px;
-    height: 70px;
-    transition: background-color 0.5s, border-color 0.5s;
-}
-
-.BoxLogin img{
-    width: 80px;
-    height: auto;
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.buttonL:hover{
-    border: 2px solid #7800F4;
-    border-color: solid 2px #7800F4;
-    color: #7800F4;
-    background-color: white;
-}
-
-.buttonL:focus{
-    outline: none;
-}
-
-.pageFormLogin{
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
     font-family: "Josefin Sans", sans-serif;
-    align-items: center;
-    border: solid #5E00C2;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+@keyframes backgroundSlide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Card do login */
+.loginCard {
+    background-color: #ffffff;
+    border: 2px solid #5E00C2;
     border-radius: 15px;
-    padding: 20px 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem 3rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.BoxLogin p{
-    margin: 0 auto;
-    margin-top: 20px;
+/* Cabeçalho do login */
+.loginHeader {
+    margin-bottom: 2rem;
+}
+
+.loginLogo {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.loginTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: black;
+}
+
+.loginSubtitle {
+    font-size: 1.2rem;
     color: #5E00C2;
-    font-size: 25px;
 }
 
-.BoxEmail{
-    width: 500px;
-    height: 70px;
+/* Formulário */
+.loginFormGroup {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.loginLabel {
     display: block;
-    margin: 0 auto;
-    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #5E00C2;
 }
 
-.BoxPassword{
-    width: 500px;
-    height: 70px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-.inputLEmail{
+.loginInput {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #5E00C2;
+    border-radius: 8px;
     background-color: white;
-    border: solid 2px #5E00C2;
-    width: 500px;
-    height: 70px;
-    border-radius: 8px;  
-    padding-left: 10px; 
-    font-size: 15px;
-    box-sizing: border-box;
     color: black;
-    outline: none;  
+    outline: none;
+    box-sizing: border-box;
 }
 
-.inputLPassword{
+.loginInput:focus {
+    border-color: #7800F4;
+}
+
+/* Botão de login */
+.loginButton {
+    margin-top: 2.5rem;
+    width: 100%;
+    height: 3.5rem;
+    background-color: #7800F4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loginButton:hover {
     background-color: white;
-    border: solid 2px #5E00C2;
-    width: 500px;
-    height: 70px;
-    border-radius: 8px;  
-    padding-left: 10px; 
-    font-size: 15px;
-    box-sizing: border-box;
-    color: black;
-    outline: none;  
+    color: #7800F4;
+    border: 2px solid #7800F4;
 }
 
-.modalButtons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
+/* Links adicionais */
+.loginLinks {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    color: #5E00C2;
+}
+
+.loginLinks a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 0.25rem;
+}
+
+.loginLinks a:hover {
+    text-decoration: underline;
+}
+
+/* Botões de desenvolvimento (ocultos em produção) */
+
+/* .loginDevTools {
+
+} */
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .loginCard {
+        padding: 1.5rem;
+    }
+
+    .loginTitle {
+        font-size: 1.5rem;
+    }
+
+    .loginSubtitle {
+        font-size: 1rem;
+    }
+
+    .loginInput, .loginButton {
+        height: 3.2rem;
+        font-size: 1rem;
+    }
 }

@@ -30,34 +30,41 @@ export const Login = () => {
     };
 
     return(
-        //chama o module.css
-            <div className={style.pageFormLogin}>
-                <div className={style.BoxLogin}>
-                    <div className={style.wrapper}>
-                        <img src="Group.svg" alt="" />
-                        <h1 className={style.titleL}>TaskManager</h1>
+        <div className={style.loginContainer}>
+            <div className={style.loginCard}>
+                <div className={style.loginHeader}>
+                    <div className={style.loginLogo}>
+                        <img src="Group.svg" alt="TaskManager Logo" />
+                        <h1 className={style.loginTitle}>TaskManager</h1>
                     </div>
-                    <p>Login</p>
+                    <p className={style.loginSubtitle}>Login</p>
                 </div>
-                <div className={style.BoxEmail}>
-                    <label>E-mail:</label>
-                    <input type="text" placeholder="" className={style.inputLEmail}/>
+                
+                <div className={style.loginFormGroup}>
+                    <label className={style.loginLabel}>E-mail:</label>
+                    <input className={style.loginInput} type="text" />
                 </div>
-                <div className={style.BoxPassword}>
-                    <label>Senha:</label>
-                    <input type="password" placeholder="" className={style.inputLPassword}/>
+                
+                <div className={style.loginFormGroup}>
+                    <label className={style.loginLabel}>Password:</label>
+                    <input className={style.loginInput} type="password" />
                 </div>
-                <button className={style.buttonL} type="submit">Confirm</button>
-                <div className={style.MiniLetters}>
-                    <p>Forgot your password? <a href="https://www.instagram.com/kaua_henriique/">Reset password</a></p>
-                    <p>Doesn't have an account? <a href="http://localhost:5173/register">Sign in</a></p>
+                
+                <button className={style.loginButton} type="submit">Login</button>
+                
+                <div className={style.loginLinks}>
+                    <p>Forgot your password? <a className={style.loginLink} href="#">Reset password</a></p>
+                    <p>Doesn't have an account? <a className={style.loginLink} href="/register">Register</a></p>
                 </div>
-                <div className="style.modalButtons">
-                    <button onClick={() => toggleModal('team')} className="style.buttonL" >modal criar equipe</button>
-                    <button onClick={() => toggleModal('project')} className="style.buttonL" >modal criar projeto</button>
+                
+                <div className={style.loginDevTools}>
+                    <button onClick={() => toggleModal('team')}>modal criar equipe</button>
+                    <button onClick={() => toggleModal('project')}>modal criar projeto</button>
                 </div>
-                <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')}> {} </ModalCreateTeam>
-                <ModalCreateProject isOpen={modals.project} setModalClose={() => toggleModal('project')}> {} </ModalCreateProject>
+                
+                <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} />
+                <ModalCreateProject isOpen={modals.project} setModalClose={() => toggleModal('project')} />
             </div>
+        </div>
     );
 }

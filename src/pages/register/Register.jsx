@@ -2,41 +2,44 @@ import style from "./Register.module.css";
 
 export const Register = () => {
     return(
-        <div className={style.pageRegister}>
-            <div className={style.pageFormRegister}>
-                <div className={style.logo}>
-                        <img src="Group.svg" alt="" />
-                        <h1 className={style.titleR}>TaskManager</h1>
+        <div className={style.registerContainer}>
+            <div className={style.registerCard}>
+                <div className={style.registerHeader}>
+                    <div className={style.registerLogo}>
+                        <img src="/Group.svg" alt="Engrenagem" />
+                        <h1 className={style.registerTitle}>TaskManager</h1>
+                    </div>
+                    <p className={style.registerSubtitle}>Register</p>
                 </div>
-                <div className={style.BoxRegister}>
-                    {/* <img src="/logo.png" alt="Logo TaskManager" /> */}
-                    <p>Register</p>
+
+                <div className={style.registerFormGroup}>
+                    <label className={style.registerLabel}>Name:</label>
+                    <input type="text" className={style.registerInput} />
                 </div>
-                <div className={style.BoxNameR}>
-                    <label>Name:</label>
-                    <input type="text" paceholder="" className={style.inputR}/>
-                </div>
-                <div className={style.Box}>
-                    <label>Role:</label>
-                    <select 
-                        className={style.inputR}                    
-                    >
+
+                <div className={style.registerFormGroup}>
+                    <label className={style.registerLabel}>Role:</label>
+                    <select className={style.registerInput}>
                         <option value="">Select your role:</option>
                         <option value="dev">Developer</option>
                         <option value="manager">Manager</option>
-                    </select>  
+                    </select>
                 </div>
-                <div className={style.BoxEmailR}>
-                    <label>E-mail:</label>
-                    <input type="text" placeholder="" className={style.inputR}/>
+
+                <div className={style.registerFormGroup}>
+                    <label className={style.registerLabel}>E-mail:</label>
+                    <input type="text" className={style.registerInput} />
                 </div>
-                <div className={style.BoxPasswordR}>
-                    <label>Password:</label>
-                    <input type="password" placeholder="" className={style.inputR}/>
+
+                <div className={style.registerFormGroup}>
+                    <label className={style.registerLabel}>Password:</label>
+                    <input type="password" className={style.registerInput} />
                 </div>
-                <button className={style.buttonR} type="submit">Sign up</button>
-                <div className={style.MiniLetters}>
-                    <p>Already have an account? <a href="http://localhost:5173">Login</a></p>
+
+                <button className={style.registerButton} type="submit">Sign up</button>
+
+                <div className={style.registerLinks}>
+                    <p>Already have an account? <a href="/">Login</a></p>
                 </div>
             </div>
         </div>
