@@ -1,8 +1,33 @@
-.page{
+.page {
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
+    overflow-y: auto; /* scroll no eixo Y */
     align-items: center;
     justify-content: center;
-    
+    scroll-behavior: smooth;
+    box-sizing: content-box;
+}
+
+/* Scrollbar personalizada para navegadores baseados em WebKit */
+.page::-webkit-scrollbar {
+    width: 8px;
+}
+
+.page::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.page::-webkit-scrollbar-thumb {
+    background-color: #7800F4;
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+}
+
+/* Scrollbar para Firefox */
+.page {
+    scrollbar-width: thin;
+    scrollbar-color: #7800F4 #f1f1f1;
 }
