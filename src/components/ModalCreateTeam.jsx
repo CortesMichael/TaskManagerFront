@@ -58,7 +58,7 @@ export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
                                 <label>Department:</label>
                                 <select 
                                     className={style.inputN} 
-                                    placeholder="Insert the department pf the team" 
+                                    placeholder="Insert the department of the team" 
                                     value={department} 
                                     onChange={(e) => setDepartment(e.target.value)}
                                 >
