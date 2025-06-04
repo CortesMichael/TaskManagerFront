@@ -1,1 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.homeContainer {
+    font-family: 'Josefin Sans', sans-serif;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+.homeContent {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.teamsSection {
+    position: absolute;
+    left: 0;
+    padding-left: 2rem;
+    width: 50%;
+    color: #000;
+}
+
+.tasksSection {
+    position: absolute;
+    right: 0;
+    padding-right: 2rem;
+    width: 35%;
+    color: #000;
+}
+
+.divider {
+    position: absolute;
+    top: 160px; /* para considerar a altura da navbar */
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 1px;
+    background-color: #000;
+    z-index: 1;
+    margin: 0 90px;
+}
+
+.teamsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.teamCard {
+    background-color: #eee;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 220px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.teamCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tasksList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.taskCard {
+    background-color: #eee;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 0.2;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.taskCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.taskTitle {
+    font-weight: bold;
+}
+
+.taskTeam {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .homeContent {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .teamsSection, .tasksSection {
+        width: 100%;
+    }
+    
+    .divider {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+    }
+}
