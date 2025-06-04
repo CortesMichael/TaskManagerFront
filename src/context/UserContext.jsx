@@ -4,9 +4,9 @@ const UserContext = createContext()
 
 export const UserProvider = ({children}) => {
     const [loggedUser, setLoggedUser] = useState(null) //armazena se usuário esta logado
-
+    const [userRole, setUserRole] = useState(null)
     return(
-        <UserContext.Provider value = {{loggedUser, setLoggedUser}}>
+        <UserContext.Provider value = {{loggedUser, setLoggedUser, userRole, setUserRole}}>
             {children}
         </UserContext.Provider>
     )
