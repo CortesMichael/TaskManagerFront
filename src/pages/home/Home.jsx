@@ -1,5 +1,8 @@
 import style from './Home.module.css';
 import { NavBar } from '../../components/NavBar';
+import { useState } from 'react';
+import { ModalUpdateTeam } from "../../components/ModalUpdateTeam";
+import { ModalUpdateProject } from "../../components/ModalUpdateProject";
 
 export const Home = () => {
     // Funções de clique para demonstrar a interatividade
@@ -21,7 +24,7 @@ export const Home = () => {
                 <section className={style.teamsSection}>
                     <h2>Your Teams</h2>
                     <div className={style.teamsGrid}>
-                        {['Equipe1', 'Equipe2', 'Equipe3'].map((team, index) => (
+                        {['Equipe1', 'Equipe2', 'Equipe3', 'Equipe4', 'Equipe5'].map((team, index) => (
                             <div 
                                 key={index} 
                                 className={style.teamCard}
