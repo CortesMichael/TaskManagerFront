@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from 'react';
 
 const api = axios.create({
-    baseURL:"http://localhost:5000/api",
+    baseURL:"https://localhost:5000/api",
     timeout: 10000,
     headers: {
         "Content-Type": "application/json",
@@ -10,11 +10,10 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(async config =>{
-
-    const token = "";
+    const token = localStorage.getItem('token');
 
     if(token){
-        api.defaults.headers.authorization = `Bearer ${token}`;
+        config.headers.Authorization = `Bearer ${token}`;
     }
 
     return config;

@@ -1,28 +1,58 @@
 import style from "./ModalCreate.module.css"
 import { useState } from "react";
+import api from "../api/api";
+import { useUserContext } from "../context/UserContext";
 
 //importa o método isOpen e o children para utilizar dentro da função
 export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
+    const { loggedUser } = useUserContext();
 
     // Estados do formulário
     const [leaderId, setLeaderId] = useState("");
     const [projectId, setProjectId] = useState("");
     const [department, setDepartment] = useState("");
     const [description, setDescription] = useState("");
+    const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Enviando o formulário");
-        console.log(leaderId, projectId, department, description);
+        setError("");
 
-        // Limpar o forms
-        setLeaderId("");
-        setProjectId("");
-        setDepartment("");
-        setDescription("");
+        if (!loggedUser) {
+            setError("Você precisa estar logado para criar uma equipe");
+            return;
+        }
 
-        // fechar após enviar
-        setModalClose();
+        try {
+            console.log("Enviando dados:", {
+                leaderId,
+                projectId,
+                departament: department,
+                description
+            });
+
+            const response = await api.post("/equip", {
+                leaderId,
+                projectId,
+                departament: department,
+                description
+            });
+
+            console.log("Resposta do servidor:", response);
+
+            if (response.status === 200) {
+                // Limpar o forms
+                setLeaderId("");
+                setProjectId("");
+                setDepartment("");
+                setDescription("");
+                // fechar após enviar
+                setModalClose();
+            }
+        } catch (err) {
+            console.error("Erro completo:", err);
+            setError(err.response?.data || "Erro ao criar equipe");
+        }
     }
 
     if(isOpen){
@@ -31,7 +61,8 @@ export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
             <div className={style.modalBG}>
                 <div className={style.mainBox}>
                     <div className={style.content}>
-                        <h2>Create new team</h2>
+                        <h2>Criar nova equipe</h2>
+                        {error && <p className={style.error}>{error}</p>}
 
                         <form onSubmit={handleSubmit}>
                             <div>
@@ -70,7 +101,7 @@ export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
                             </div>
                             <div>
                                 <label>Description:</label>
-                                <textArea
+                                <textarea
                                     className={style.inputN}
                                     name="Description"                            
                                     placeholder="Insert the description of the team" 

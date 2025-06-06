@@ -29,14 +29,16 @@ export const Login = () => {
         e.preventDefault();
         try{
             const response = await api.post('/auth/login', {
-            "email": email, 
-            "password": password
-        })
+                "email": email, 
+                "password": password
+            })
         
-        setLoggedUser(response.data.token);
-        setUserRole(response.data.role); 
+            const token = response.data.token;
+            localStorage.setItem('token', token);
+            setLoggedUser(token);
+            setUserRole(response.data.role); 
         
-        console.log("DEU CERTO")
+            console.log("DEU CERTO")
         }catch(error){
             console.log(error);
         }
