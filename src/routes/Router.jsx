@@ -3,6 +3,7 @@ import { BlankLayout } from "../layouts/BlankLayout"
 import { Login } from "../pages/login/Login"
 import { Register } from "../pages/register/Register"
 import { Home } from "../pages/home/Home"
+import { Projects } from "../pages/projects/Projects"
 import { NavBar } from "../components/NavBar"
 
 export const Router = createBrowserRouter([
@@ -22,6 +23,10 @@ export const Router = createBrowserRouter([
                 path: "/register",
                 element: <Register />
             },
+            {
+                path: "/projects",
+                element: <Projects />
+            }
         ]
     }
 ])
