@@ -5,15 +5,12 @@ import { ModalUpdateTeam } from "../../components/ModalUpdateTeam";
 import { ModalUpdateProject } from "../../components/ModalUpdateProject";
 
 export const Home = () => {
-    // Funções de clique para demonstrar a interatividade
     const handleTeamClick = (teamName) => {
         console.log(`Team clicked: ${teamName}`);
-        // Aqui você implementará a navegação ou exibição de detalhes
     };
 
     const handleTaskClick = (taskName) => {
         console.log(`Task clicked: ${taskName}`);
-        // Aqui você implementará a navegação ou exibição de detalhes
     };
 
     return (

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
+
 export const NavBar = () => {
 
 
@@ -29,7 +30,7 @@ export const NavBar = () => {
 
     return(
         <header>
-            <div className={style.icon}>
+            <div className={style.icon} onClick={() => navigate("/home")} style={{ cursor: "pointer" }}>
                 <img src="./Group.svg" alt="" />
             </div>
             <div className={style.btns}>
