@@ -3,56 +3,56 @@ import { useState } from "react";
 import api from "../api/api";
 import { useUserContext } from "../context/UserContext";
 
-//importa o método isOpen e o children para utilizar dentro da função
 export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
-    const { loggedUser } = useUserContext();
 
-    // Estados do formulário
+    const {loggedUser, setLoggedUser, userRole, setUserRole} = useUserContext();
+
     const [leaderId, setLeaderId] = useState("");
     const [projectId, setProjectId] = useState("");
     const [department, setDepartment] = useState("");
     const [description, setDescription] = useState("");
     const [error, setError] = useState("");
 
+    const handleLeaderIdChange = (e) => {
+        setLeaderId(e.target.value);
+    }
+
+    const handleProjectIdChange = (e) => {
+        setProjectId(e.target.value);
+    }
+    
+    const handleDepartmentChange = (e) => {
+        setDepartment(e.target.value);
+    }
+
+    const handleDescriptionChange = (e) => {
+        setDescription(e.target.value);
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError("");
-
-        if (!loggedUser) {
-            setError("Você precisa estar logado para criar uma equipe");
-            return;
-        }
-
-        try {
-            console.log("Enviando dados:", {
-                leaderId,
-                projectId,
-                departament: department,
-                description
+        try{
+            await api.post("/equip", {
+                "leaderId": leaderId,
+                "projectId": projectId,
+                "description": description, 
+                "departament": department
             });
+            console.log("Equipe criada com sucesso");
 
-            const response = await api.post("/equip", {
-                leaderId,
-                projectId,
-                departament: department,
-                description
-            });
+            setLeaderId("");
+            setProjectId("");
+            setDescription("");
+            setDepartment("");
 
-            console.log("Resposta do servidor:", response);
+            setModalClose();
 
-            if (response.status === 200) {
-                // Limpar o forms
-                setLeaderId("");
-                setProjectId("");
-                setDepartment("");
-                setDescription("");
-                // fechar após enviar
-                setModalClose();
-            }
-        } catch (err) {
-            console.error("Erro completo:", err);
-            setError(err.response?.data || "Erro ao criar equipe");
+        } catch (error) {
+            console.error("Erro ao criar equipe:", error);
         }
+        console.log("Enviando o formulário");
+        console.log(leaderId, projectId, description);
+        
     }
 
     if(isOpen){
@@ -72,7 +72,7 @@ export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
                                     className={style.inputN} 
                                     placeholder="Insert the Id from the project leader" 
                                     value={leaderId} 
-                                    onChange={(e) => setLeaderId(e.target.value)}
+                                    onChange={handleLeaderIdChange}
                                 />
                             </div>
                             <div>
@@ -82,7 +82,7 @@ export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
                                     className={style.inputN} 
                                     placeholder="Insert the Id from the project" 
                                     value={projectId} 
-                                    onChange={(e) => setProjectId(e.target.value)}
+                                    onChange={handleProjectIdChange}
                                 />
                             </div>
                             <div>
@@ -93,10 +93,10 @@ export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
                                     value={department} 
                                     onChange={(e) => setDepartment(e.target.value)}
                                 >
-                                    <option value="">Select the department:</option>
                                     <option value="dev">Development</option>
                                     <option value="design">Design</option>
                                     <option value="hr">Human resources</option>
+                                
                                 </select>                               
                             </div>
                             <div>
@@ -106,7 +106,7 @@ export const ModalCreateTeam = ({isOpen, children, setModalClose}) => {
                                     name="Description"                            
                                     placeholder="Insert the description of the team" 
                                     value={description} 
-                                    onChange={(e) => setDescription(e.target.value)}
+                                    onChange={handleDescriptionChange}
                                 />
                             </div>
                             <div className={style.boxClose}>
