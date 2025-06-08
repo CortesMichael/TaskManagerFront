@@ -14,7 +14,7 @@ export const Projects = () => {
             <section className={style.projectsSection}>
                 <h2>Your Projects</h2>
                 <div className={style.projectsGrid}>
-                    {['Projeto1', 'Projeto2', 'Projeto3', 'Projeto4', 'Projeto5'].map((project, index) => (
+                    {['Projeto1', 'Projeto2'].map((project, index) => (
                         <div 
                             key={index} 
                             className={style.projectsCard}
