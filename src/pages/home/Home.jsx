@@ -1,7 +1,7 @@
 import style from './Home.module.css';
 import { NavBar } from '../../components/NavBar';
 import { useState } from 'react';
-import { ModalUpdateTeam } from "../../components/ModalUpdateTeam";
+import { ModalCreateTeam } from "../../components/ModalCreateTeam";
 import { ModalUpdateProject } from "../../components/ModalUpdateProject";
 
 export const Home = () => {
@@ -11,6 +11,16 @@ export const Home = () => {
 
     const handleTaskClick = (taskName) => {
         console.log(`Task clicked: ${taskName}`);
+    };
+
+    const [modals, setModals] = useState({
+        // inserir função dos modais
+        team: false,
+    });
+
+    // abre / fecha os modais
+    const toggleModal = (modalName) => {
+        setModals(prev => ({ ...prev, [modalName]: !prev[modalName] }));
     };
 
     return (
@@ -34,6 +44,8 @@ export const Home = () => {
                 </section>
 
                 <div className={style.divider}></div>
+                <button onClick={() => toggleModal('team')}>modal criar equipe</button>
+                <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} />
 
                 <section className={style.tasksSection}>
                     <h2>Next Tasks</h2>

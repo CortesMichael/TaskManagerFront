@@ -4,6 +4,7 @@ import style from "./ModalCreate.module.css"
 export const ModalUpdateTeam = ({isOpen, children, setModalClose}) => {
 
     const [leaderID, setLeaderID] = useState("");
+    const [projectID, setProjectID] = useState("");
     const [departament, setDepartament] = useState("");
     const [description, setDescription] = useState("");
 
@@ -15,7 +16,8 @@ export const ModalUpdateTeam = ({isOpen, children, setModalClose}) => {
         setLeaderID("");
         setDepartament("");
         setDescription("");
-
+        setProjectID("");
+        
         setModalClose();
     }
 
@@ -35,7 +37,7 @@ export const ModalUpdateTeam = ({isOpen, children, setModalClose}) => {
                                     className={style.inputN}
                                     placeholder="Update the project leader ID" 
                                     value={leaderID} 
-                                    onChange={(e) => setLeaderId(e.target.value)}/>
+                                    onChange={(e) => setLeaderID(e.target.value)}/>
                                 </div>
 
                                 <div>
