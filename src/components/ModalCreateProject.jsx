@@ -1,5 +1,6 @@
 import style from "./ModalCreate.module.css"
 import { useState } from "react";
+import api from "../api/api";
 
 //importa o método isOpen e o children para utilizar dentro da função
 export const ModalCreateProject = ({isOpen, children, setModalClose}) => {
@@ -9,8 +10,27 @@ export const ModalCreateProject = ({isOpen, children, setModalClose}) => {
     const [description, setDescription] = useState("");
     const [goals, setGoals] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    }
+    const handleDescriptionChange = (e) => {
+        setDescription(e.target.value);
+    }
+    const handleGoalsChange = (e) => {
+        setGoals(e.target.value);
+    }
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
+        try {
+            await api.post('/project', {
+                "name": name,
+                "description": description,
+                "goals": goals
+            });
+        } catch (error) {
+            console.error("Erro ao criar projeto:", error);
+        }
         console.log("Enviando o formulário");
         console.log(name, description, goals);
 
@@ -39,7 +59,7 @@ export const ModalCreateProject = ({isOpen, children, setModalClose}) => {
                                     className={style.inputN} 
                                     placeholder="Insert the name of the project" 
                                     value={name} 
-                                    onChange={(e) => setName(e.target.value)}
+                                    onChange={handleNameChange}
                                 />
                             </div>
                             <div>
@@ -49,17 +69,17 @@ export const ModalCreateProject = ({isOpen, children, setModalClose}) => {
                                     className={style.inputN} 
                                     placeholder="Insert the goals you want to reach with the project" 
                                     value={goals} 
-                                    onChange={(e) => setGoals(e.target.value)}
+                                    onChange={handleGoalsChange}
                                 />
                             </div> 
                             <div>
                                 <label>Description:</label>
-                                <textArea
+                                <textarea
                                     className={style.inputN}
                                     name="Description"                            
                                     placeholder="Insert the description of the project" 
                                     value={description} 
-                                    onChange={(e) => setDescription(e.target.value)}
+                                    onChange={handleDescriptionChange}
                                 />
                             </div>                                                  
 

@@ -22,9 +22,9 @@ export const Home = () => {
 
             <main className={style.homeContent}>
                 <section className={style.teamsSection}>
-                    <h2>Your Teams</h2>
+                    <h2>Your Projects</h2>
                     <div className={style.teamsGrid}>
-                        {['Equipe1', 'Equipe2', 'Equipe3', 'Equipe4', 'Equipe5'].map((team, index) => (
+                        {['Projeto1', 'Projeto2', 'Projeto3'].map((team, index) => (
                             <div 
                                 key={index} 
                                 className={style.teamCard}
