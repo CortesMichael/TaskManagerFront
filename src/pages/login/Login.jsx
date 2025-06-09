@@ -102,13 +102,13 @@ export const Login = () => {
                     {/* <button onClick={() => toggleModal('team')}>modal criar equipe</button> */}
                     <button onClick={() => toggleModal('project')}>modal criar projeto</button>
                     <button onClick={() => toggleModal('updateProject')}>modal atualizar projeto</button>
-                    <button onClick={() => toggleModal('updateTeam')}>modal atualizar equipe</button>
+                    {/* <button onClick={() => toggleModal('updateTeam')}>modal atualizar equipe</button> */}
                 </div>
                 
                 {/* <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} /> */}
                 <ModalCreateProject isOpen={modals.project} setModalClose={() => toggleModal('project')} />
                 <ModalUpdateProject isOpen={modals.updateProject} setModalClose={() => toggleModal('updateProject')} />
-                <ModalUpdateTeam isOpen={modals.updateTeam} setModalClose={() => toggleModal('updateTeam')} />
+                {/* <ModalUpdateTeam isOpen={modals.updateTeam} setModalClose={() => toggleModal('updateTeam')} /> */}
 
             </div>
         </div>
