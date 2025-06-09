@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { ModalCreateTeam } from "../../components/ModalCreateTeam";
 import { ModalUpdateProject } from "../../components/ModalUpdateProject";
 import { ModalUpdateTeam } from "../../components/ModalUpdateTeam";
+import { ModalCreateTask } from "../../components/ModalCreateTask";
 import { useUserContext } from '../../context/UserContext';
 import api from '../../api/api';
 
@@ -44,6 +45,7 @@ export const Home = () => {
         // inserir função dos modais
         team: false,
         updateTeam: false,
+        task: false,
     });
 
     // abre / fecha os modais
@@ -75,7 +77,9 @@ export const Home = () => {
                 <div className={style.divider}></div>
                 <button onClick={() => toggleModal('team')}>criar equipe</button>
                 <button onClick={() => toggleModal('updateTeam')}>atualizar equipe</button>
+                <button onClick={() => toggleModal('task')}>criar tarefa</button>
                 <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} />
+                <ModalCreateTask isOpen={modals.task} setModalClose={() => toggleModal('task')} />
                 <ModalUpdateTeam equipId="TEAM-2025060819435952" isOpen={modals.updateTeam} setModalClose={() => toggleModal('updateTeam')} />
 
                 <section className={style.tasksSection}>
@@ -116,8 +120,11 @@ export const Home = () => {
 
                 <div className={style.divider}></div>
                 <button onClick={() => toggleModal('team')}>modal criar equipe</button>
+                <button onClick={() => toggleModal('updateTeam')}>modal atualizar equipe</button>
+                <button onClick={() => toggleModal('task')}>modal criar tarefa</button>
                 <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} />
                 <ModalUpdateTeam isOpen={modals.updateTeam} setModalClose={() => toggleModal('updateTeam')} />
+                <ModalCreateTask isOpen={modals.task} setModalClose={() => toggleModal('task')} />
 
                 <section className={style.tasksSection}>
                     <h2>Next Tasks</h2>
