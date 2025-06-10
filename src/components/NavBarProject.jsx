@@ -1,6 +1,7 @@
 import style from "./NavBar.module.css"
-import { ModalCreateTeam } from "../components/ModalCreateTeam"
-import { ModalCreateProject } from "../components/ModalCreateProject"
+import { ModalCreateTeam } from "./ModalCreateTeam"
+import { ModalCreateProject } from "./ModalCreateProject"
+import { ModalCreateTask } from "./ModalCreateTask";
 import { useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";

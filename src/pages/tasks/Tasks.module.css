@@ -5,7 +5,7 @@
 }
 
 
-.projectsContainer {
+.tasksContainer {
     font-family: 'Josefin Sans', sans-serif;
     min-height: 100vh;
     background-color: #ffffff;
@@ -13,14 +13,14 @@
     box-sizing: border-box;
 }
 
-.projectsContent {
+.tasksContent {
     display: flex;
     justify-content: space-between;
     width: 100vw;
     margin: 0 auto;
 }
 
-.projectsSection {
+.tasksSection {
     position: absolute;
     left: 0;
     padding-left: 2rem;
@@ -29,7 +29,7 @@
     color: #000;
 }
 
-.projectsGrid {
+.tasksGrid {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -37,7 +37,7 @@
     justify-content: space-between;
 }
 
-.projectsCard {
+.tasksCard {
     background-color: #eee;
     border: 1px solid black;
     border-radius: 15px;
@@ -54,7 +54,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.projectsCard:hover {
+.tasksCard:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

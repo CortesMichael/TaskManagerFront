@@ -1,5 +1,5 @@
 import style from './Home.module.css';
-import { NavBar } from '../../components/NavBar';
+import { NavBar } from '../../components/NavBarProject';
 import { useEffect, useState } from 'react';
 import { ModalCreateTeam } from "../../components/ModalCreateTeam";
 import { ModalUpdateProject } from "../../components/ModalUpdateProject";
