@@ -1,10 +1,24 @@
 import style from "./Teams.module.css"
-import { NavBar } from '../../components/NavBarProject';
+import { useState } from 'react';
+import { NavBar } from '../../components/NavBarTeam';
 import React from 'react'
 
 export const Teams = () => {
+
+    const [dataList, setDataList] = useState([]);
+
     const handleTeamClick = (TeamName) => {
         console.log(`Team clicked: ${TeamName}`);
+    };
+
+    const [modals, setModals] = useState({
+        // inserir função dos modais
+        updateTeam: false,
+    });
+
+    // abre / fecha os modais
+    const toggleModal = (modalName) => {
+        setModals(prev => ({ ...prev, [modalName]: !prev[modalName] }));
     };
 
   return (
@@ -12,15 +26,16 @@ export const Teams = () => {
         <NavBar />   
         <main className={style.teamsContent}>
             <section className={style.teamsSection}>
-                <h2>Teams from (Project)</h2>
+                <h2>Teams from {dataList.name}</h2>
                 <div className={style.teamsGrid}>
-                    {['Equipe1', 'Equipe2', 'Equipe3'].map((teams, index) => (
+                    {dataList.length == 0 && <p>Nenhuma equipe encontrado</p>}
+                    {dataList.map((teams, index) => (
                         <div 
                             key={index} 
                             className={style.teamsCard}
-                            onClick={() => handleTeamClick(teams)}
+                            onClick={() => toggleModal('updateTeam')}
                         >
-                            <p>{teams}</p>                         
+                            <p>{teams.name}</p>                         
                         </div>
                     ))}
                 </div>
