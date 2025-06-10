@@ -1,7 +1,6 @@
 import { useState } from "react";
 import style from "./ModalCreate.module.css"
 
-
 export const ModalUpdateProject = ({isOpen, children, setModalClose}) => {
 
     const [description, setDescription] = useState("");
