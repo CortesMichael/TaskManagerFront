@@ -31,7 +31,7 @@ export const NavBar = () => {
             </div>
             <div className={style.btns}>
                 <button className={style.btnLogout} onClick={BotaoRedirecionar}>Logout</button>
-                <button className={style.btnCreate} style={{display: userRole == "MNG" ? "inline-block" : "none"}} onClick={() => toggleModal('task')}>Create Task</button>
+                <button className={style.btnCreate} style={{display: userRole == "DEV" ? "inline-block" : "none"}} onClick={() => toggleModal('task')}>Create Task</button>
             </div>
 
             <ModalCreateTask isOpen={modal.task} setModalClose={() => toggleModal('task')}/>

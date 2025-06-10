@@ -7,6 +7,8 @@ export const Tasks = () => {
         console.log(`Task clicked: ${taskName}`);
     };
 
+    const [dataList, setDataList] = useState([]);
+
     return (
         <div className={style.tasksContainer}>
             <NavBar />   
@@ -14,7 +16,8 @@ export const Tasks = () => {
                 <section className={style.tasksSection}>
                     <h2>Tasks from (Team)</h2>
                     <div className={style.tasksGrid}>
-                        {['Task1', 'Task2', 'Task3'].map((task, index) => (
+                        {dataList.length == 0 && <p>Nenhum task encontrado</p>}
+                        {dataList.map((task, index) => (
                             <div 
                                 key={index} 
                                 className={style.tasksCard}

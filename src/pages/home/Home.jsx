@@ -1,4 +1,5 @@
 import style from './Home.module.css';
+import { useNavigate } from 'react-router-dom'
 import { NavBar } from '../../components/NavBarProject';
 import { useEffect, useState } from 'react';
 import { ModalCreateTeam } from "../../components/ModalCreateTeam";
@@ -43,10 +44,11 @@ export const Home = () => {
 
     const [modals, setModals] = useState({
         // inserir função dos modais
-        team: false,
         updateTeam: false,
         task: false,
     });
+
+    const navigate = useNavigate();
 
     // abre / fecha os modais
     const toggleModal = (modalName) => {
@@ -66,7 +68,7 @@ export const Home = () => {
                             <div 
                                 key={index} 
                                 className={style.teamCard}
-                                onClick={() => handleTeamClick(team)}
+                                onClick={() => navigate("/teams")}
                             >
                                 <p>{team.name}</p>                         
                             </div>
@@ -75,10 +77,10 @@ export const Home = () => {
                 </section>
 
                 <div className={style.divider}></div>
-                <button onClick={() => toggleModal('team')}>criar equipe</button>
+               
                 <button onClick={() => toggleModal('updateTeam')}>atualizar equipe</button>
                 <button onClick={() => toggleModal('task')}>criar tarefa</button>
-                <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} />
+                
                 <ModalCreateTask equipId="TEAM-2025060819462908" isOpen={modals.task} setModalClose={() => toggleModal('task')} />
                 <ModalUpdateTeam equipId="TEAM-2025060819435952" isOpen={modals.updateTeam} setModalClose={() => toggleModal('updateTeam')} />
 
@@ -110,7 +112,7 @@ export const Home = () => {
                             <div 
                                 key={index} 
                                 className={style.teamCard}
-                                onClick={() => handleTeamClick(team)}
+                                onClick={() => navigate("/tasks")}
                             >
                                 <p>{team.departament}</p>                         
                             </div>
