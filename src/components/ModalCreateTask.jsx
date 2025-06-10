@@ -2,7 +2,7 @@ import style from "./ModalCreate.module.css";
 import { useState } from "react";
 import api from "../api/api";
 
-export const ModalCreateTask = ({isOpen, children, setModalClose}) => {
+export const ModalCreateTask = ({isOpen, children, setModalClose, equipId}) => {
 
     const [priority, setPriority] = useState("");
     const [description, setDescription] = useState("");
@@ -29,16 +29,18 @@ export const ModalCreateTask = ({isOpen, children, setModalClose}) => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-            await api.post('/task', {
+            await api.post(`/task/${equipId}/create`, {
                 "priority": priority,
                 "description": description,
                 "initialDate": initialDate,
                 "finalDate": finalDate,
-                "assignee": assignee
+                "assigneeId": assignee
             });
         } catch (error) {
             console.error("Erro ao criar tarefa:", error);
         }
+        console.log("Enviando o formulário");
+        console.log(priority, description, initialDate, finalDate, assignee);
     }
 
     if(isOpen){
@@ -52,8 +54,8 @@ export const ModalCreateTask = ({isOpen, children, setModalClose}) => {
                             <div>
                                 <label>Task priority:</label>
                                 <input 
-                                    type="text" 
-                                    className={style.inputN} 
+                                    className={style.inputN}
+                                    type="number" 
                                     placeholder="Insert the priority of the task" 
                                     value={priority} 
                                     onChange={handlePriorityChange}
@@ -89,13 +91,14 @@ export const ModalCreateTask = ({isOpen, children, setModalClose}) => {
                             </div>
                             <div>
                                 <label>Task assignee:</label>
-                                <input 
-                                    type="text" 
+                                <select 
                                     className={style.inputN} 
-                                    placeholder="Insert the assignee of the task" 
                                     value={assignee} 
                                     onChange={handleAssigneeChange}
-                                />
+                                >
+                                    <option value="">Select an assignee</option>
+                                    <option value=""></option>
+                                </select>
                             </div>
                             <div className={style.boxClose}>
                                 <button 

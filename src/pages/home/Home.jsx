@@ -79,7 +79,7 @@ export const Home = () => {
                 <button onClick={() => toggleModal('updateTeam')}>atualizar equipe</button>
                 <button onClick={() => toggleModal('task')}>criar tarefa</button>
                 <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} />
-                <ModalCreateTask isOpen={modals.task} setModalClose={() => toggleModal('task')} />
+                <ModalCreateTask equipId="TEAM-2025060819462908" isOpen={modals.task} setModalClose={() => toggleModal('task')} />
                 <ModalUpdateTeam equipId="TEAM-2025060819435952" isOpen={modals.updateTeam} setModalClose={() => toggleModal('updateTeam')} />
 
                 <section className={style.tasksSection}>
@@ -124,7 +124,7 @@ export const Home = () => {
                 <button onClick={() => toggleModal('task')}>modal criar tarefa</button>
                 <ModalCreateTeam isOpen={modals.team} setModalClose={() => toggleModal('team')} />
                 <ModalUpdateTeam isOpen={modals.updateTeam} setModalClose={() => toggleModal('updateTeam')} />
-                <ModalCreateTask isOpen={modals.task} setModalClose={() => toggleModal('task')} />
+                <ModalCreateTask isOpen={modals.task} equipId="TEAM-2025060819462908" setModalClose={() => toggleModal('task')} />
 
                 <section className={style.tasksSection}>
                     <h2>Next Tasks</h2>
