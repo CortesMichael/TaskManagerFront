@@ -3,8 +3,9 @@ import { BlankLayout } from "../layouts/BlankLayout"
 import { Login } from "../pages/login/Login"
 import { Register } from "../pages/register/Register"
 import { Home } from "../pages/home/Home"
-import { Projects } from "../pages/projects/Projects"
-import { NavBar } from "../components/NavBar"
+import { Teams } from "../pages/teams/Teams"
+import { Tasks } from "../pages/tasks/Tasks"
+import { NavBar } from "../components/NavBarProject"
 
 export const Router = createBrowserRouter([
     {
@@ -24,8 +25,12 @@ export const Router = createBrowserRouter([
                 element: <Register />
             },
             {
-                path: "/projects",
-                element: <Projects />
+                path: "/teams",
+                element: <Teams />
+            },
+            {
+                path: "/tasks",
+                element: <Tasks />
             }
         ]
     }

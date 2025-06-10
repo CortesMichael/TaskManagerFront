@@ -94,7 +94,6 @@ export const Login = () => {
                 </form>
                 
                 <div className={style.loginLinks}>
-                    <p>Forgot your password? <a className={style.loginLink} href="#">Reset password</a></p>
                     <p>Doesn't have an account? <a className={style.loginLink} href="/register">Register</a></p>
                 </div>
                 
